@@ -26,8 +26,7 @@ Install Go: https://go.dev/doc/install -> download for Linux
 
 3. Add /usr/local/go/bin to the PATH environment variable.
 
-    You can do this by adding the following line to your `$HOME/.profile` or `/etc/profile` (for a system-wide installation): `
-    export PATH=$PATH:/usr/local/go/bin`
+    You can do this by adding the following line to your `$HOME/.profile` or `/etc/profile` (for a system-wide installation): `export PATH=$PATH:/usr/local/go/bin`
 
     ```
     nano ~/.profile
@@ -50,13 +49,13 @@ Install Go: https://go.dev/doc/install -> download for Linux
 
     ```
     linux:~/Desktop/Magazyn/projects/golang$ sudo rm -rf /usr/local/go
-    [sudo] password for user: 
+    [sudo] password for user:
     linux:~/Desktop/Magazyn/projects/golang$ sudo tar -C /usr/local -xzf /home/$(whoami)/Downloads/go1.23.0.linux-amd64.tar.gz
     linux:~/Desktop/Magazyn/projects/golang$ nano ~/.profile
     linux:~/Desktop/Magazyn/projects/golang$ source ~/.profile
     linux:~/Desktop/Magazyn/projects/golang$ go version
     go version go1.23.0 linux/amd64
-    linux:~/Desktop/Magazyn/projects/golang$ 
+    linux:~/Desktop/Magazyn/projects/golang$
     ```
 
 Sometimes it requires to restart IDE or system to find `go/bin`.
@@ -68,3 +67,5 @@ Go Programming – Golang Course with Bonus Projects
 https://www.youtube.com/watch?v=un6ZyFkqFKo&ab_channel=freeCodeCamp.org
 
 GitHub: https://github.com/bootdotdev/fcc-learn-golang-assets
+
+TODO https://youtu.be/un6ZyFkqFKo?si=ewd7VcelZvrFodFM&t=3081
