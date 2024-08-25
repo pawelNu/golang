@@ -1,3 +1,12 @@
 {
-    "cSpell.words": ["Magazyn", "Textio", "uintptr", "untar", "wagslane"]
+    "cSpell.words": [
+        "Magazyn",
+        "OPENRATE",
+        "Println",
+        "Sprintf",
+        "Textio",
+        "uintptr",
+        "untar",
+        "wagslane"
+    ]
 }
