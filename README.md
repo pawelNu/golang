@@ -2,9 +2,9 @@
 
 Learning Golang
 
--   [Golang](#golang)
-    -   [Setup](#setup)
-    -   [Tutorials](#tutorials)
+- [Golang](#golang)
+  - [Setup](#setup)
+  - [Tutorials](#tutorials)
 
 ## Setup
 
@@ -43,7 +43,6 @@ Install Go: https://go.dev/doc/install -> download for Linux
     ```
     go version
     ```
-
     go version go1.23.0 linux/amd64
 
 5. Whole process:
