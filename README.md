@@ -26,8 +26,7 @@ Install Go: https://go.dev/doc/install -> download for Linux
 
 3. Add /usr/local/go/bin to the PATH environment variable.
 
-    You can do this by adding the following line to your `$HOME/.profile` or `/etc/profile` (for a system-wide installation): `
-export PATH=$PATH:/usr/local/go/bin`
+    You can do this by adding the following line to your `$HOME/.profile` or `/etc/profile` (for a system-wide installation): `export PATH=$PATH:/usr/local/go/bin`
 
     ```
     nano ~/.profile
