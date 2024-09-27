@@ -2,9 +2,9 @@
 
 Learning Golang
 
-- [Golang](#golang)
-  - [Setup](#setup)
-  - [Tutorials](#tutorials)
+-   [Golang](#golang)
+    -   [Setup](#setup)
+    -   [Tutorials](#tutorials)
 
 ## Setup
 
@@ -43,6 +43,7 @@ Install Go: https://go.dev/doc/install -> download for Linux
     ```
     go version
     ```
+
     go version go1.23.0 linux/amd64
 
 5. Whole process:
@@ -68,4 +69,4 @@ https://www.youtube.com/watch?v=un6ZyFkqFKo&ab_channel=freeCodeCamp.org
 
 GitHub: https://github.com/bootdotdev/fcc-learn-golang-assets
 
-TODO 
+TODO https://youtu.be/un6ZyFkqFKo?si=8lztof2T675KXYr_&t=10101
