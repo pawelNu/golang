@@ -15,7 +15,7 @@ func sendBirthdayMessage(msg birthdayMessage) {
 
 // ****************************************************
 // the interfaces in go are hard to read
-// if some method is implementation of interface 
+// if some method is implementation of interface
 // there is no option to get that information from code
 // ****************************************************
 
@@ -65,7 +65,7 @@ func main() {
 		recipientName: "Bill Deer",
 		birthdayTime:  time.Date(1934, 05, 01, 0, 0, 0, 0, time.UTC),
 	})
-	
+
 	sendBirthdayMessage(birthdayMessage{
 		birthdayTime:  time.Date(1994, 03, 21, 0, 0, 0, 0, time.UTC),
 		recipientName: "test test",

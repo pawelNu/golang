@@ -63,5 +63,5 @@ func main() {
 	fmt.Println(test3(2, 0))
 
 	log := log.New(os.Stdout, "INFO: ", log.LstdFlags|log.Lshortfile)
-    log.Println(test3(2, 0))
+	log.Println(test3(2, 0))
 }
