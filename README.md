@@ -2,9 +2,9 @@
 
 Learning Golang
 
--   [Golang](#golang)
-    -   [Setup](#setup)
-    -   [Tutorials](#tutorials)
+- [Golang](#golang)
+  - [Setup](#setup)
+  - [Tutorials](#tutorials)
 
 ## Setup
 
@@ -69,4 +69,4 @@ https://www.youtube.com/watch?v=un6ZyFkqFKo&ab_channel=freeCodeCamp.org
 
 GitHub: https://github.com/bootdotdev/fcc-learn-golang-assets
 
-TODO https://youtu.be/un6ZyFkqFKo?si=sVxOnCZ517htRj4R&t=14782
+TODO https://youtu.be/un6ZyFkqFKo?si=-5pv0EYa8iHRGSHJ&t=16264
