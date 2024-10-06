@@ -3,3 +3,4 @@ fcc-learn-golang-assets/
 **/main.exe
 **/hellogo
 tutorial/11-local_development/11-remote_package/datetest/datetest
+**/src/vendor/**
