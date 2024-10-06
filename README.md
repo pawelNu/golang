@@ -69,4 +69,4 @@ https://www.youtube.com/watch?v=un6ZyFkqFKo&ab_channel=freeCodeCamp.org
 
 GitHub: https://github.com/bootdotdev/fcc-learn-golang-assets
 
-TODO https://youtu.be/un6ZyFkqFKo?si=QOfrz-kgboTNTcum&t=24193
+TODO https://youtu.be/un6ZyFkqFKo?si=YE5XTo9l1-xpAooO&t=25887
