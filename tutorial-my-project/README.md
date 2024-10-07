@@ -1,11 +1,12 @@
 # My project
 
--   [My project](#my-project)
-    -   [Create go.mod file](#create-gomod-file)
-    -   [Build and run application](#build-and-run-application)
-    -   [Add packages](#add-packages)
-    -   [Problems](#problems)
-        -   [listen tcp :8000: bind: address already in use](#listen-tcp-8000-bind-address-already-in-use)
+- [My project](#my-project)
+  - [Create go.mod file](#create-gomod-file)
+  - [Build and run application](#build-and-run-application)
+  - [Add packages](#add-packages)
+  - [Go install](#go-install)
+  - [Problems](#problems)
+    - [listen tcp :8000: bind: address already in use](#listen-tcp-8000-bind-address-already-in-use)
 
 ## Create go.mod file
 
@@ -41,6 +42,18 @@ go get github.com/joho/godotenv
 go get github.com/go-chi/chi
 go get github.com/go-chi/cors
 go mod vendor # to copy library code to vendor folder
+```
+
+## Go install
+
+```bash
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+sqlc version
+# v1.27.0
+
+go install github.com/pressly/goose/v3/cmd/goose@latest
+goose -version
+# goose version: v3.22.1
 ```
 
 ## Problems
