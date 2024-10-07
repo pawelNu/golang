@@ -5,6 +5,8 @@
   - [Build and run application](#build-and-run-application)
   - [Add packages](#add-packages)
   - [Go install](#go-install)
+  - [Goose](#goose)
+  - [Sqlc](#sqlc)
   - [Problems](#problems)
     - [listen tcp :8000: bind: address already in use](#listen-tcp-8000-bind-address-already-in-use)
 
@@ -54,6 +56,36 @@ sqlc version
 go install github.com/pressly/goose/v3/cmd/goose@latest
 goose -version
 # goose version: v3.22.1
+```
+
+## Goose
+
+```bash
+goose -dir sql/schema postgres postgresql://postgres:test@localhost:5431/rssagg up
+# 2024/10/07 17:46:28 OK   001_users.sql (16.7ms)
+# 2024/10/07 17:46:28 goose: successfully migrated database to version: 1
+
+goose -dir sql/schema postgres postgresql://postgres:test@localhost:5431/rssagg down
+# 2024/10/07 17:46:21 OK   001_users.sql (40.5ms)
+```
+
+## Sqlc
+
+[sqlc.yaml](src/sqlc.yaml)
+
+```yaml
+version: "2"
+sql:
+  - schema: "sql/schema"
+    queries: "sql/queries"
+    engine: "postgresql"
+    gen:
+      go:
+        out: "internal/database"
+```
+
+```bash
+sqlc generate
 ```
 
 ## Problems

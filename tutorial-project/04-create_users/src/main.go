@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -10,8 +9,10 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
+
+	"github.com/bootdotdev/projects/createusers/internal/database"
+
 	_ "github.com/lib/pq"
-	"github.com/pawelNu/rssagg/internal/database"
 )
 
 type apiConfig struct {
@@ -23,7 +24,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		logger("PORT environment variable is not set")
+		log.Fatal("PORT environment variable is not set")
 	}
 
 	dbURL := os.Getenv("DATABASE_URL")
@@ -53,9 +54,11 @@ func main() {
 	}))
 
 	v1Router := chi.NewRouter()
+
+	v1Router.Post("/users", apiCfg.handlerUsersCreate)
+
 	v1Router.Get("/healthz", handlerReadiness)
 	v1Router.Get("/err", handlerErr)
-	v1Router.Post("/users", apiCfg.handlerUsersCreate)
 
 	router.Mount("/v1", v1Router)
 	srv := &http.Server{
@@ -63,7 +66,6 @@ func main() {
 		Handler: router,
 	}
 
-	serverWorkingMsg := fmt.Sprintf("Serving on port: %s\n", port)
-	logger(serverWorkingMsg)
+	log.Printf("Serving on port: %s\n", port)
 	log.Fatal(srv.ListenAndServe())
 }

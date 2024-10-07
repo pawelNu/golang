@@ -1,7 +1,9 @@
 package main
 
-import ("fmt"
-"github.com/pawelNu/mystrings"
+import (
+	"fmt"
+
+	"github.com/pawelNu/mystrings"
 )
 
 func main() {
