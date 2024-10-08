@@ -1,0 +1,18 @@
+@baseUrlv1 = http://localhost:8000/v1/
+
+###
+
+POST {{baseUrlv1}}users
+{
+    "name": "John2"
+}
+
+###
+
+GET {{baseUrlv1}}users
+Authorization: ApiKey 0eaec81876ecd853b44d857632dab96a37a45fda89bea34013e36e7a585f06bb
+
+###
+
+GET {{baseUrlv1}}users
+Authorization: ApiKey 632dab96a37a45fda89bea34013e36e7a585f06bb
