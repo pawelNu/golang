@@ -5,6 +5,7 @@ Learning Golang
 - [Golang](#golang)
   - [Setup](#setup)
   - [Tutorials](#tutorials)
+  - [REST API Client](#rest-api-client)
 
 ## Setup
 
@@ -69,4 +70,10 @@ https://www.youtube.com/watch?v=un6ZyFkqFKo&ab_channel=freeCodeCamp.org
 
 GitHub: https://github.com/bootdotdev/fcc-learn-golang-assets
 
-TODO https://youtu.be/un6ZyFkqFKo?si=r7F-76WBMLTPPpf-&t=27553
+TODO https://youtu.be/un6ZyFkqFKo?si=7lF_O9b3oIqqr8sC&t=29644
+
+## REST API Client
+
+https://install.advancedrestclient.com/home
+
+REST Client in VS Code

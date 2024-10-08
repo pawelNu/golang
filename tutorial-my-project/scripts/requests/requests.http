@@ -16,3 +16,13 @@ Authorization: ApiKey 0eaec81876ecd853b44d857632dab96a37a45fda89bea34013e36e7a58
 
 GET {{baseUrlv1}}users
 Authorization: ApiKey 632dab96a37a45fda89bea34013e36e7a585f06bb
+
+###
+
+POST {{baseUrlv1}}feeds HTTP/1.1
+Authorization: ApiKey 0eaec81876ecd853b44d857632dab96a37a45fda89bea34013e36e7a585f06bb
+
+{
+    "name": "Lane's Blog",
+    "url": "https://wagslane.dev/index.xml"
+}
