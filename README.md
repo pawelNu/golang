@@ -64,13 +64,13 @@ Sometimes it requires to restart IDE or system to find `go/bin`.
 
 ## Tutorials
 
-Go Programming – Golang Course with Bonus Projects
+Go Programming - Golang Course with Bonus Projects
 
 https://www.youtube.com/watch?v=un6ZyFkqFKo&ab_channel=freeCodeCamp.org
 
 GitHub: https://github.com/bootdotdev/fcc-learn-golang-assets
 
-TODO https://youtu.be/un6ZyFkqFKo?si=7lF_O9b3oIqqr8sC&t=29644
+TODO 
 
 ## REST API Client
 
