@@ -76,8 +76,6 @@ https://www.youtube.com/watch?v=un6ZyFkqFKo&ab_channel=freeCodeCamp.org
 
 GitHub: https://github.com/bootdotdev/fcc-learn-golang-assets
 
-TODO 
-
 ### Golang Tutorial for Beginners | Full Go Course
 
 TODO todo course https://www.youtube.com/watch?v=yyUHQIec83I&ab_channel=TechWorldwithNana
