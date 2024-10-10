@@ -2,16 +2,16 @@
 
 Learning Golang
 
--   [Golang](#golang)
-    -   [Setup](#setup)
-    -   [Tutorials](#tutorials)
-        -   [Go Programming - Golang Course with Bonus Projects](#go-programming---golang-course-with-bonus-projects)
-        -   [Golang Tutorial for Beginners | Full Go Course](#golang-tutorial-for-beginners--full-go-course)
-        -   [The Best Resources to Learn Golang (If I Could Start Over)](#the-best-resources-to-learn-golang-if-i-could-start-over)
-        -   [Golang course for beginners](#golang-course-for-beginners)
-        -   [Learn Go Programming by Building 11 Projects – Full Course](#learn-go-programming-by-building-11-projects--full-course)
-        -   [What is the BEST Way to Study Golang? (and get hired...)](#what-is-the-best-way-to-study-golang-and-get-hired)
-    -   [REST API Client](#rest-api-client)
+- [Golang](#golang)
+  - [Setup](#setup)
+  - [Tutorials](#tutorials)
+    - [Go Programming - Golang Course with Bonus Projects](#go-programming---golang-course-with-bonus-projects)
+    - [Golang Tutorial for Beginners | Full Go Course](#golang-tutorial-for-beginners--full-go-course)
+    - [The Best Resources to Learn Golang (If I Could Start Over)](#the-best-resources-to-learn-golang-if-i-could-start-over)
+    - [Golang course for beginners](#golang-course-for-beginners)
+    - [Learn Go Programming by Building 11 Projects – Full Course](#learn-go-programming-by-building-11-projects--full-course)
+    - [What is the BEST Way to Study Golang? (and get hired...)](#what-is-the-best-way-to-study-golang-and-get-hired)
+  - [REST API Client](#rest-api-client)
 
 ## Setup
 
@@ -76,13 +76,11 @@ https://www.youtube.com/watch?v=un6ZyFkqFKo&ab_channel=freeCodeCamp.org
 
 GitHub: https://github.com/bootdotdev/fcc-learn-golang-assets
 
-TODO https://youtu.be/un6ZyFkqFKo?si=CaSL2ErRtWBBVRYK&t=31151
+TODO 
 
 ### Golang Tutorial for Beginners | Full Go Course
 
-TODO todo course
-
-https://www.youtube.com/watch?v=yyUHQIec83I&ab_channel=TechWorldwithNana
+TODO todo course https://www.youtube.com/watch?v=yyUHQIec83I&ab_channel=TechWorldwithNana
 
 Repo: https://gitlab.com/nanuchi/go-full-course-youtube
 
