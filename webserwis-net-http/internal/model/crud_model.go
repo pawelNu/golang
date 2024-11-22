@@ -1,7 +1,5 @@
 package model
 
-// TODO napisać modele od nowa
-
 // RequestBody reprezentuje strukturę danych przesyłanych w żądaniu
 type RequestBody struct {
 	Name  string `json:"name" example:"Jan Kowalski"`              // Imię użytkownika

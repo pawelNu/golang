@@ -57,7 +57,5 @@ func (s *Server) RegisterRoutes() http.Handler {
 	mux.Handle("/tickets/", http.StripPrefix("/tickets", tickets))
 	mux.Handle("/crud/", http.StripPrefix("/crud", crudWithAuth))
 
-	// TODO zrobić builda ze svelte i wsadzić go do gotowego serwera i zobaczyć czy działą
-
 	return middleware.Logging(mux)
 }
