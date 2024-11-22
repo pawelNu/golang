@@ -22,7 +22,7 @@ tmp_dir = "tmp"
   poll_interval = 0
   post_cmd = []
   pre_cmd = [
-    "swam fmt",
+    "swag fmt",
     "swag init -g ./routes.go -d ./internal/server/,./internal/model/"
   ]
   rerun = false

@@ -44,7 +44,7 @@ func (s *Server) RegisterRoutes() http.Handler {
 	mux.HandleFunc("GET /hello-world", s.HelloWorldHandler)
 
 	// swagger.HandleFunc("GET /swagger", httpSwagger.WrapHandler)
-	mux.HandleFunc("GET /swagger", httpSwagger.WrapHandler)
+	mux.HandleFunc("/swagger", httpSwagger.WrapHandler)
 
 	file.HandleFunc("GET /display", s.ShowFileHandler)
 	file.HandleFunc("GET /download", s.DownloadFileHandler)
