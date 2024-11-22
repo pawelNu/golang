@@ -108,6 +108,10 @@ func logging(level, str, color string) {
 	}
 }
 
+// TODO fix func1 name delete func name from logging
+// [utils/ui/ui_handler.go.func1:24]:
+// [utils/ui/ui_handler.go.func1:28]
+
 func getFunctionName(fullName string) string {
 	parts := strings.Split(fullName, ".")
 	return parts[len(parts)-1]
