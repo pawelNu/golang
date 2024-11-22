@@ -26,16 +26,16 @@ func (s *Server) HelloWorldHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // Endpoint do wystawiania pliku - wyświetlanie pliku w przeglądarce
-// @Summary Display a file
-// @Description Endpoint do wyświetlania zawartości pliku w przeglądarce
-// @Tags file
-// @Produce text/plain
-// @Success 200 {string} string "File content displayed"
-// @Failure 404 {string} string "File not found"
-// @Router /file/show [get]
+//	@Summary		Display a file
+//	@Description	Endpoint do wyświetlania zawartości pliku w przeglądarce
+//	@Tags			file
+//	@Produce		text/plain
+//	@Success		200	{string}	string	"File content displayed"
+//	@Failure		404	{string}	string	"File not found"
+//	@Router			/file/show [get]
 func (s *Server) ShowFileHandler(w http.ResponseWriter, r *http.Request) {
 	// Ścieżka do pliku na serwerze
-	filePath := "./uploaded_files/your_file.txt"
+	filePath := "./test.txt"
 
 	// Otwieramy plik do odczytu
 	file, err := os.Open(filePath)

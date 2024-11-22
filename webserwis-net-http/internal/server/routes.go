@@ -4,7 +4,8 @@ import (
 	"net/http"
 	_ "webserwis/docs"
 	"webserwis/utils/middleware"
-	uiHandler "webserwis/utils/ui"
+
+	// uiHandler "webserwis/utils/ui"
 
 	httpSwagger "github.com/swaggo/http-swagger/v2"
 )
@@ -32,17 +33,18 @@ import (
 func (s *Server) RegisterRoutes() http.Handler {
 
 	mux := http.NewServeMux()
-	swagger := http.NewServeMux()
+	// swagger := http.NewServeMux()
 	file := http.NewServeMux()
 	tickets := http.NewServeMux()
 	crud := http.NewServeMux()
 	// ui := http.NewServeMux()
 
-	mux.Handle("GET /", uiHandler.UiHandler())
+	// mux.Handle("GET /{$}", uiHandler.UiHandler())
 	mux.HandleFunc("POST /login", middleware.LoginHandler)
-	
 	mux.HandleFunc("GET /hello-world", s.HelloWorldHandler)
-	swagger.HandleFunc("GET /swagger", httpSwagger.WrapHandler)
+
+	// swagger.HandleFunc("GET /swagger", httpSwagger.WrapHandler)
+	mux.HandleFunc("GET /swagger", httpSwagger.WrapHandler)
 
 	file.HandleFunc("GET /display", s.ShowFileHandler)
 	file.HandleFunc("GET /download", s.DownloadFileHandler)
@@ -56,7 +58,8 @@ func (s *Server) RegisterRoutes() http.Handler {
 	crud.HandleFunc("DELETE /{id}", s.DeleteItem)
 	crudWithAuth := middleware.AuthMiddleware(crud)
 
-	mux.Handle("/docs/", http.StripPrefix("/docs", swagger))
+	// mux.Handle("/docs/", http.StripPrefix("/docs", swagger))
+	// mux.Handle("/swagger/", http.StripPrefix("/swagger", swagger))
 	mux.Handle("/file/", http.StripPrefix("/file", file))
 	mux.Handle("/tickets/", http.StripPrefix("/tickets", tickets))
 	// mux.Handle("/crud/", http.StripPrefix("/crud", crud))

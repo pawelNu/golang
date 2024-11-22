@@ -1,5 +1,11 @@
 # Project webserwis-net-http
 
+-   [Project webserwis-net-http](#project-webserwis-net-http)
+    -   [Getting Started](#getting-started)
+    -   [MakeFile](#makefile)
+    -   [REST API docs](#rest-api-docs)
+    -   [Issues](#issues)
+
 One Paragraph of project description goes here
 
 ## Getting Started
@@ -43,6 +49,11 @@ Clean up binary from the last build:
 ```bash
 make clean
 ```
+
+## REST API docs
+
+1. https://github.com/swaggo/swag
+2. https://github.com/swaggo/http-swagger
 
 ## Issues
 

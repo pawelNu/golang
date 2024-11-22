@@ -20,11 +20,11 @@ tmp_dir = "tmp"
   log = "build-errors.log"
   poll = false
   poll_interval = 0
-  post_cmd = [
+  post_cmd = []
+  pre_cmd = [
     "swam fmt",
     "swag init -g ./routes.go -d ./internal/server/,./internal/model/"
   ]
-  pre_cmd = []
   rerun = false
   rerun_delay = 500
   send_interrupt = false

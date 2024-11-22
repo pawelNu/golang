@@ -15,6 +15,12 @@ func UiHandler() http.Handler {
 		uiDir := "./frontend/dist"
 		filePath := filepath.Join(uiDir, r.URL.Path)
 
+		// TODO sprawdzić to
+		// if r.URL.Path == "/" {
+        //     http.Redirect(w, r, "/home", http.StatusFound)
+        //     return
+        // }
+
 		log.Info("Requesting file:", filePath)
 
 		// Sprawdź, czy plik istnieje
