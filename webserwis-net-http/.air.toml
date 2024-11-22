@@ -22,6 +22,7 @@ tmp_dir = "tmp"
   poll_interval = 0
   post_cmd = []
   pre_cmd = [
+    "$HOME/go/bin/goimports -w .",
     "swag fmt",
     "swag init -g ./routes.go -d ./internal/server/,./internal/model/"
   ]

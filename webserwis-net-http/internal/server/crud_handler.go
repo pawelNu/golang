@@ -58,7 +58,7 @@ func (s *Server) SendItem(w http.ResponseWriter, r *http.Request) {
 //	@Failure		405			{string}	string	"Invalid request method"
 //	@Router			/crud/{id} [put]
 func (s *Server) UpdateItem(w http.ResponseWriter, r *http.Request) {
-    
+
 	// Dekodowanie JSON-a z żądania
 	var requestBody model.RequestBody
 	err := json.NewDecoder(r.Body).Decode(&requestBody)
@@ -67,7 +67,7 @@ func (s *Server) UpdateItem(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-    id := r.PathValue("id")
+	id := r.PathValue("id")
 	// Zbudowanie odpowiedzi
 	response := model.ResponseBody{
 		Message: "Data UPDATED successfully for id: " + id,
@@ -97,7 +97,7 @@ func (s *Server) UpdateItem(w http.ResponseWriter, r *http.Request) {
 //	@Router			/crud/{id} [delete]
 func (s *Server) DeleteItem(w http.ResponseWriter, r *http.Request) {
 
-    id := r.PathValue("id")
+	id := r.PathValue("id")
 	// Zbudowanie odpowiedzi
 	response := model.ResponseBody{
 		Message: "Data DELETED successfully for id: " + id,

@@ -17,9 +17,9 @@ func UiHandler() http.Handler {
 
 		// TODO sprawdzić to
 		// if r.URL.Path == "/" {
-        //     http.Redirect(w, r, "/home", http.StatusFound)
-        //     return
-        // }
+		//     http.Redirect(w, r, "/home", http.StatusFound)
+		//     return
+		// }
 
 		log.Info("Requesting file:", filePath)
 

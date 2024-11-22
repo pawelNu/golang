@@ -26,6 +26,7 @@ func (s *Server) HelloWorldHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // Endpoint do wystawiania pliku - wyświetlanie pliku w przeglądarce
+//
 //	@Summary		Display a file
 //	@Description	Endpoint do wyświetlania zawartości pliku w przeglądarce
 //	@Tags			file
