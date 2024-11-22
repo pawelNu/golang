@@ -9,7 +9,7 @@ import (
 )
 
 // UiHandler zwraca funkcję obsługującą statyczne pliki i routing
-func UiHandler() http.Handler {
+func UiHandler() http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Ścieżka do pliku
 		uiDir := "./frontend/dist"
