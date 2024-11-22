@@ -5,8 +5,6 @@ import (
 	_ "webserwis/docs"
 	"webserwis/utils/middleware"
 
-	// uiHandler "webserwis/utils/ui"
-
 	httpSwagger "github.com/swaggo/http-swagger/v2"
 )
 
@@ -39,7 +37,7 @@ func (s *Server) RegisterRoutes() http.Handler {
 	crud := http.NewServeMux()
 	// ui := http.NewServeMux()
 
-	// mux.Handle("GET /{$}", uiHandler.UiHandler())
+	// mux.Handle("GET /", uiHandler.UiHandler())
 	mux.HandleFunc("POST /login", middleware.LoginHandler)
 	mux.HandleFunc("GET /hello-world", s.HelloWorldHandler)
 
@@ -58,11 +56,9 @@ func (s *Server) RegisterRoutes() http.Handler {
 	crud.HandleFunc("DELETE /{id}", s.DeleteItem)
 	crudWithAuth := middleware.AuthMiddleware(crud)
 
-	// mux.Handle("/docs/", http.StripPrefix("/docs", swagger))
-	mux.Handle("/", swagger)
+	mux.Handle("/docs/", http.StripPrefix("/docs", swagger))
 	mux.Handle("/file/", http.StripPrefix("/file", file))
 	mux.Handle("/tickets/", http.StripPrefix("/tickets", tickets))
-	// mux.Handle("/crud/", http.StripPrefix("/crud", crud))
 	mux.Handle("/crud/", http.StripPrefix("/crud", crudWithAuth))
 
 	// TODO zrobić builda ze svelte i wsadzić go do gotowego serwera i zobaczyć czy działą
