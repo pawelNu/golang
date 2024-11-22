@@ -1,0 +1,257 @@
+basePath: /
+definitions:
+  model.RequestBody:
+    properties:
+      email:
+        description: Adres e-mail użytkownika
+        example: jan.kowalski@example.com
+        type: string
+      name:
+        description: Imię użytkownika
+        example: Jan Kowalski
+        type: string
+    type: object
+  model.ResponseBody:
+    properties:
+      message:
+        description: Komunikat do użytkownika
+        example: Data SEND successfully
+        type: string
+      status:
+        description: Status odpowiedzi
+        example: success
+        type: string
+    type: object
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server celler server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /crud/:
+    post:
+      consumes:
+      - application/json
+      description: Receives user data via POST request and returns a success message
+      parameters:
+      - description: User data payload
+        in: body
+        name: requestBody
+        required: true
+        schema:
+          $ref: '#/definitions/model.RequestBody'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.ResponseBody'
+        "400":
+          description: Failed to parse JSON
+          schema:
+            type: string
+        "405":
+          description: Invalid request method
+          schema:
+            type: string
+      summary: Submit user data
+      tags:
+      - crud
+  /crud/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Receives user data via POST request and returns a success message2
+      parameters:
+      - description: Item Id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.ResponseBody'
+        "400":
+          description: Failed to parse JSON
+          schema:
+            type: string
+        "405":
+          description: Invalid request method
+          schema:
+            type: string
+      summary: Submit user data
+      tags:
+      - crud
+    put:
+      consumes:
+      - application/json
+      description: Receives user data via PUT request and returns a success message
+      parameters:
+      - description: Item Id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: User data payload
+        in: body
+        name: requestBody
+        required: true
+        schema:
+          $ref: '#/definitions/model.RequestBody'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.ResponseBody'
+        "400":
+          description: Failed to parse JSON
+          schema:
+            type: string
+        "405":
+          description: Invalid request method
+          schema:
+            type: string
+      summary: Update user data
+      tags:
+      - crud
+  /file/show:
+    get:
+      description: Endpoint do wyświetlania zawartości pliku w przeglądarce
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: File content displayed
+          schema:
+            type: string
+        "404":
+          description: File not found
+          schema:
+            type: string
+      summary: Display a file
+      tags:
+      - file
+  /hello-world:
+    get:
+      consumes:
+      - application/json
+      description: Returns a hello world message
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Hello World Handler
+      tags:
+      - test
+  /tickets/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Returns ticket
+      parameters:
+      - description: Ticket Id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Get ticket by id
+      tags:
+      - tickets
+  /tickets/{id}/history:
+    get:
+      consumes:
+      - application/json
+      description: Returns ticket history
+      parameters:
+      - description: Ticket Id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Get ticket history by ticket id
+      tags:
+      - tickets
+  /tickets/history:
+    get:
+      consumes:
+      - application/json
+      description: Returns ticket history containing searched keywords
+      parameters:
+      - collectionFormat: csv
+        description: List of keywords
+        in: query
+        items:
+          type: string
+        name: keywords
+        required: true
+        type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Search keywords in all tickets history
+      tags:
+      - tickets
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"

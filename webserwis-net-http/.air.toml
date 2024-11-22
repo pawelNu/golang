@@ -6,7 +6,7 @@ tmp_dir = "tmp"
   args_bin = []
   bin = "./main"
   cmd = "make build"
-  delay = 1000
+  delay = 2000
   exclude_dir = ["assets", "tmp", "vendor", "testdata", "docs"]
   exclude_file = []
   exclude_regex = ["_test.go"]
@@ -20,10 +20,9 @@ tmp_dir = "tmp"
   log = "build-errors.log"
   poll = false
   poll_interval = 0
-  TODO odzyskać readme
   post_cmd = [
-    "swam fmt"
-    "swag init -g ./routes.go -d ./internal/server/"
+    "swam fmt",
+    "swag init -g ./routes.go -d ./internal/server/,./internal/model/"
   ]
   pre_cmd = []
   rerun = false

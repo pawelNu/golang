@@ -9,8 +9,8 @@ import (
 )
 
 // UiHandler zwraca funkcję obsługującą statyczne pliki i routing
-func UiHandler() http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
+func UiHandler() http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Ścieżka do pliku
 		uiDir := "./frontend/dist"
 		filePath := filepath.Join(uiDir, r.URL.Path)
@@ -32,7 +32,7 @@ func UiHandler() http.HandlerFunc {
 
 		// Jeśli plik istnieje, zwróć go
 		http.ServeFile(w, r, filePath)
-	}
+	})
 }
 
 // Funkcja do ustalania odpowiedniego typu MIME na podstawie rozszerzenia pliku

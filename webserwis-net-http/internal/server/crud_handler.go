@@ -3,7 +3,8 @@ package server
 import (
 	"encoding/json"
 	"net/http"
-    log "webserwis/utils/log"
+	"webserwis/internal/model"
+	log "webserwis/utils/log"
 )
 
 // SendItem godoc
