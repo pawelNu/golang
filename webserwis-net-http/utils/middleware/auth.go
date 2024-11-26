@@ -21,17 +21,23 @@ type Credentials struct {
 	Password string `json:"password"`
 }
 
-var jwtSecret = []byte("your-very-secret-key")
-
 type Claims struct {
 	Username string `json:"username"`
 	jwt.RegisteredClaims
 }
 
-var validUsers = map[string]string{ // username -> password
+type LoginResponse struct {
+	Username   string `json:"user_name" example:"user name"`
+	ExpireDate string `json:"expire_date" example:"2024-11-27 01:31:43"`
+	Token      string `json:"token" example:"aaa.bbb.ccc"`
+}
+
+var validUsers = map[string]string{
 	"user1": "password123",
 	"user2": "securepass",
 }
+
+var jwtSecret = []byte("your-very-secret-key")
 
 // LoginHandler godoc
 //
@@ -41,7 +47,7 @@ var validUsers = map[string]string{ // username -> password
 //	@Accept			json
 //	@Produce		json
 //	@Param			requestBody	body		Credentials	true	"User data payload"
-//	@Success		200			{object}	map[string]string
+//	@Success		200			{object}	LoginResponse
 //	@Failure		400			{string}	string	"Failed to parse JSON"
 //	@Failure		405			{string}	string	"Invalid request method"
 //	@Router			/login [post]
@@ -60,14 +66,23 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Generowanie tokena
-	token, err := generateJWT(creds.Username, 9*time.Hour)
+	token, expirationTime, err := generateJWT(creds.Username, 9*time.Hour)
 	if err != nil {
 		utils.ErrorResponse(w, "Failed to generate token", http.StatusInternalServerError)
 		return
 	}
 
-	// Zwrócenie tokena w odpowiedzi
-	response := map[string]string{"token": token}
+	// Zwrócenie tokena, użytkownika i daty wygaśnięcia
+	// response := map[string]interface{}{
+	// 	"user":        creds.Username,
+	// 	"expire_date": expirationTime.Format(time.DateTime), // Format ISO 8601
+	// 	"token":       token,
+	// }
+	response := LoginResponse{
+		Username:   creds.Username,
+		ExpireDate: expirationTime.Format(time.DateTime),
+		Token:      token,
+	}
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
 }
@@ -99,8 +114,8 @@ func AuthMiddleware(next http.Handler) http.Handler {
 	})
 }
 
-// generateJWT generuje token JWT dla użytkownika
-func generateJWT(username string, duration time.Duration) (string, error) {
+// generateJWT generuje token JWT dla użytkownika oraz zwraca czas wygaśnięcia
+func generateJWT(username string, duration time.Duration) (string, time.Time, error) {
 	expirationTime := time.Now().Add(duration)
 	claims := &Claims{
 		Username: username,
@@ -110,7 +125,12 @@ func generateJWT(username string, duration time.Duration) (string, error) {
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	return token.SignedString(jwtSecret)
+	signedToken, err := token.SignedString(jwtSecret)
+	if err != nil {
+		return "", time.Time{}, err
+	}
+
+	return signedToken, expirationTime, nil
 }
 
 // validateJWT sprawdza poprawność tokena i zwraca dane z niego

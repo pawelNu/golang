@@ -40,4 +40,8 @@ watch:
             fi; \
         fi
 
+format:
+	@goimports -w .
+	@swag fmt
+
 .PHONY: all build run test clean watch
