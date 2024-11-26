@@ -10,9 +10,9 @@ var ErrNoAuthHeaderIncluded = errors.New("no authorization header included")
 
 // GetAPIKey - extracts and API key from
 // the headers of an HTTP request
-// 
+//
 // Example:
-// 
+//
 // Authorization: ApiKey (insert apikey here)
 func GetAPIKey(headers http.Header) (string, error) {
 	authHeader := headers.Get("Authorization")

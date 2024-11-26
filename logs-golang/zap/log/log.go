@@ -1,11 +1,12 @@
 package log
 
 import (
-	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
 	"os"
 	"path/filepath"
 	"runtime"
+
+	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 )
 
 // Globalna instancja loggera
@@ -17,15 +18,15 @@ func init() {
 
 	// Ustawienia kodera
 	config.EncoderConfig = zapcore.EncoderConfig{
-		TimeKey:        "time",
-		LevelKey:       "level",
-		NameKey:        "logger",
-		MessageKey:     "message",
-		StacktraceKey:  "stacktrace",
-		LineEnding:     zapcore.DefaultLineEnding,
-		EncodeLevel:    zapcore.LowercaseLevelEncoder,
-		EncodeTime:     zapcore.ISO8601TimeEncoder,
-		EncodeCaller:   nil, // Nie używamy domyślnego kodera dla caller
+		TimeKey:       "time",
+		LevelKey:      "level",
+		NameKey:       "logger",
+		MessageKey:    "message",
+		StacktraceKey: "stacktrace",
+		LineEnding:    zapcore.DefaultLineEnding,
+		EncodeLevel:   zapcore.LowercaseLevelEncoder,
+		EncodeTime:    zapcore.ISO8601TimeEncoder,
+		EncodeCaller:  nil, // Nie używamy domyślnego kodera dla caller
 	}
 
 	// Ustawienia wyjścia do pliku
@@ -36,7 +37,7 @@ func init() {
 
 	// Dodajemy writer do pliku
 	core := zapcore.NewCore(
-		zapcore.NewJSONEncoder(config.EncoderConfig), // Wybór kodera JSON
+		zapcore.NewJSONEncoder(config.EncoderConfig),                                      // Wybór kodera JSON
 		zapcore.NewMultiWriteSyncer(zapcore.AddSync(os.Stdout), zapcore.AddSync(logFile)), // Wypisujemy zarówno na konsolę, jak i do pliku
 		zapcore.InfoLevel, // Poziom logowania
 	)

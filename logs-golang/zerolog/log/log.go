@@ -21,9 +21,9 @@ func init() {
 	// Konfiguracja rotacji logów
 	fileLogger := &lumberjack.Logger{
 		Filename:   "application.log",
-		MaxSize:    1, // MB
-		MaxBackups: 3,  // Przechowuj maksymalnie 3 kopie zapasowe
-		MaxAge:     30, // Przechowuj logi przez 30 dni
+		MaxSize:    1,     // MB
+		MaxBackups: 3,     // Przechowuj maksymalnie 3 kopie zapasowe
+		MaxAge:     30,    // Przechowuj logi przez 30 dni
 		Compress:   false, // Kompresuj stare logi
 	}
 

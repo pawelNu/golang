@@ -22,7 +22,7 @@ const (
 )
 
 var (
-	logger *lumberjack.Logger
+	logger         *lumberjack.Logger
 	projectPath, _ = os.Getwd()
 	projectRoot    = projectPath + string(filepath.Separator)
 )
