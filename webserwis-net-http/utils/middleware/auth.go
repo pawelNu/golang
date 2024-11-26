@@ -1,8 +1,5 @@
 package middleware
 
-// TODO napisać od nowa
-// TODO i przetestować od nowa
-
 import (
 	"encoding/json"
 	"errors"
@@ -14,8 +11,6 @@ import (
 	jwt "github.com/golang-jwt/jwt/v5"
 )
 
-// TODO do poprawy do zrobienia jwt token
-// Prosta struktura na dane logowania
 type Credentials struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
