@@ -61,15 +61,6 @@ func Error(args ...any) {
 	logging("ERROR", msg, RED)
 }
 
-func getStacktrace(msg string) string {
-	err := errors.WithStack(fmt.Errorf("%s", msg))
-	stackTrace := fmt.Sprintf("%+v\n", err)
-
-	stackTrace = sanitizeStacktrace(stackTrace)
-
-	return stackTrace
-}
-
 func createLogMessage(args ...any) string {
 	var msgParts []string
 
@@ -89,12 +80,11 @@ func createLogMessage(args ...any) string {
 
 func logging(level, str, color string) {
 	if len(str) > 0 {
-		pc, file, line, ok := runtime.Caller(2)
+		_, file, line, ok := runtime.Caller(2)
 		if ok {
 			level := fmt.Sprintf("%s[%s]%s", color, level, RESET_COLOR)
-			funcName := getFunctionName(runtime.FuncForPC(pc).Name())
 			relativeFilePath := sanitizeFilePath(file)
-			file := fmt.Sprintf("%s[%s.%s:%d]%s", CYAN, relativeFilePath, funcName, line, RESET_COLOR)
+			file := fmt.Sprintf("%s[%s:%d]%s", CYAN, relativeFilePath, line, RESET_COLOR)
 			log.Printf("%s %s: %v", level, file, str)
 		} else {
 			log.Printf("%v", str)
@@ -108,16 +98,20 @@ func logging(level, str, color string) {
 	}
 }
 
-func getFunctionName(fullName string) string {
-	parts := strings.Split(fullName, ".")
-	return parts[len(parts)-1]
-}
-
 func sanitizeFilePath(filePath string) string {
 	if strings.HasPrefix(filePath, projectRoot) {
 		return strings.Replace(filePath, projectRoot, "", 1)
 	}
 	return filePath
+}
+
+func getStacktrace(msg string) string {
+	err := errors.WithStack(fmt.Errorf("%s", msg))
+	stackTrace := fmt.Sprintf("%+v\n", err)
+
+	stackTrace = sanitizeStacktrace(stackTrace)
+
+	return stackTrace
 }
 
 func sanitizeStacktrace(stackTrace string) string {
